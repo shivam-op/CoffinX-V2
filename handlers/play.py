@@ -551,8 +551,8 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="**Currently Playing \n🏷 Name: {title}**".format(
-        message.from_user.mention()
+        caption="**Currently Playing \n🏷 Name: {}**".format(
+        title()
         ),
     )
         os.remove("final.png")
