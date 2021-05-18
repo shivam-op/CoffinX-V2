@@ -551,7 +551,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="**Currently Playing \n🏷 Name: {title}**".format()
+        caption="**Currently Playing \n🏷 Name: {title}**".format(
         message.from_user.mention()
         ),
     )
