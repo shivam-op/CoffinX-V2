@@ -551,14 +551,8 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="**Currently Playing**"
-        caption="**Song : {}**".format(
-                title()
-        caption="**Duration :{}**".format(
-                duration()
-        caption="**Status :Playing🎵**"
-        caption="**Requested By : {}**".format(
-                message.from_user.metion()
+        caption="**Currently Playing**\n\n Requested By {}**".format(
+                message.from_user.mention()
         ),
     )
         os.remove("final.png")
@@ -671,9 +665,9 @@ async def deezer(client: Client, message_: Message):
         loc = file_path
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
-        await res.edit_text(f"#️⃣ Queued at position {position}")
+        await res.edit_text(f"#️⃣ Qᴜᴇᴜᴇᴅ ɪɴ {position} Pᴏsɪᴛɪᴏɴ")
     else:
-        await res.edit_text("**Currently Playing \n🏷 Name: {title} \n⏱ Duration: {duration} \n💡 Status: playing \n🎧 Requested by: {}**")
+        await res.edit_text("**Cᴜʀʀᴇɴᴛʟʏ Pʟᴀʏɪɴɢ ☊\n🎵 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ {}**")
         chat_id = message_.chat.id
         que[chat_id] = []
         qeue = que.get(message_.chat.id)
@@ -690,7 +684,7 @@ async def deezer(client: Client, message_: Message):
         chat_id=message_.chat.id,
         reply_markup=keyboard,
         photo="final.png",
-        caption=f"Playing [{title}]({url}) Via Deezer"
+        caption=f"Cᴜʀʀᴇɴᴛʏ Pʟᴀʏɪɴɢ \n[{title}]({url}) \n⏱️Dᴜʀᴀᴛɪᴏɴ {Duration}\nRᴇǫᴜᴇsᴛᴇᴅ Bʏ {message.from_user.mention}"
     ) 
     os.remove("final.png")
 
