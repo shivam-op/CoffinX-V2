@@ -45,8 +45,8 @@ $ python(3) -m CoffinXmusic
 <p align="center"><a href="https://github.com/theshashankk/CoffinXmusic/blob/main/bot_cmd.txt"> <img src="https://img.shields.io/badge/Command%20Of%20CoffinX-Op-orange?style=for-the-badge&logo=pyrogram" width="220" height="38.45"/></a></p>
 
 
-<details>
-  <summary> <h4>Credit</h4> </summary>
+<details> Credits
+  <summary> <h4></h4> </summary>
 
 - [InukaASiTH](https://github.com/InukaAsith): Dev
 - [Rojserbest](http://github.com/rojserbes): Dev
