@@ -1,6 +1,6 @@
-__mod_name__ = "Playback ⏯"
+__MODULE__ = "Playback ⏯"
 
-__help__ = """
+__HELP__ = """
 <b>𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂<b>
 <b>playback<b>
 - /player: Open Settings menu of player
