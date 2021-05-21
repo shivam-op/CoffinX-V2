@@ -72,9 +72,9 @@ async def rem(USER, message):
         return
 
     
-__mod_name__ = "Userbotjoin"
+__MODULE__ = "Userbotjoin"
 
-__help__ = """
+__HELP__ = """
 <b>𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂<b>
 <b>invite assistant to your chat<b>
 /userbotjoin 
