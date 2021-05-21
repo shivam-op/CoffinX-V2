@@ -534,8 +534,12 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
         photo="final.png", 
-        caption=f"#⃣ Your requested song: [{song_name}]({url})\n **queued** at position {position}!",
-        reply_markup=keyboard)
+        caption=f"#⃣ Your requested song: [{song_name}]({url})\n **queued** at position {position}!",.format(
+                 song_name=title,
+                 url=url,
+                 position=position, 
+        ),
+    )                  
         os.remove("final.png")
         return await lel.delete()
     else:
