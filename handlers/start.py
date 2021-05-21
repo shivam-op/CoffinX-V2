@@ -32,7 +32,7 @@ async def start(_, message: Message):
             [ 
                 [
                     InlineKeyboardButton(
-                        "📜 Command 📜", callback_data="get_help")
+                        "help 🆘", callback_data="get_help")
                   ],[
                     InlineKeyboardButton(
                         "🚑 Support Group 🚑", url="https://t.me/aboutoxy"
