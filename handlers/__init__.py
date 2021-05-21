@@ -1,4 +1,4 @@
-from os.path import dirname, basename, isfile
+from os.path import dirname, basename, isfile, join
 import glob
 
 handlers = glob.glob(join(dirname(__file__), "*.py"))
