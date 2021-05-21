@@ -535,6 +535,8 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png", 
         caption=f"#⃣ Your requested song **queued** at position {position}!",                 
+        reply_markup=keyboard,
+        )   
         os.remove("final.png")
         return await lel.delete()
     else:
