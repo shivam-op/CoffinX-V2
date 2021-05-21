@@ -33,7 +33,7 @@ async def _human_time_duration(seconds):
     return ', '.join(parts)
 
 
-@Client.on_message(filters.command("uptime") & filters.group & ~filters.edited)
+@Client.on_message(filters.command("uptime") & filters.group & filters.private & ~filters.edited)
 async def get_uptime(_, m: Message):
     """Reply ping with pong and delete both messages"""
     start = time()
@@ -44,7 +44,7 @@ async def get_uptime(_, m: Message):
     )
 
 
-@Client.on_message(filters.command("ping") & filters.group & ~filters.edited)
+@Client.on_message(filters.command("ping") & filters.group & filters.private & ~filters.edited)
 async def ping_pong(_, m: Message):
     """/ping"""
     current_time = datetime.utcnow()
