@@ -14,7 +14,7 @@ async def start(_, message: Message):
             [ 
                 [
                     InlineKeyboardButton(
-                        "help 🆘", callback_data="help_answer")
+                        "help 🆘", callback_data="bot_commands")
                   ],[
                     InlineKeyboardButton(
                         "🚑 Support Group 🚑", url="https://t.me/aboutoxy"
@@ -102,3 +102,12 @@ async def ghelp(_, message: Message):
             ]
         ),
     )
+
+@app.on_callback_query(filters.regex("bot_commands"))
+async def commands_callbacc(_, CallbackQuery):
+    text, keyboard = await help_parser(CallbackQuery.from_user.mention)
+    await app.send_message(
+        CallbackQuery.message.chat.id, text=text, reply_markup=keyboard
+    )
+
+    await CallbackQuery.message.delete()    
