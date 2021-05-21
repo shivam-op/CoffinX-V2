@@ -45,5 +45,5 @@ async def get_uptime(_, m: Message):
     await m_reply.edit_text(
         f"ＰＯＮＧ\n"
         f"- 𝙿𝙸𝙽𝙶: `{delta_ping * 1000:3f} ms`\n"
-        f"-{emoji.robot} 𝙲𝙾𝙵𝙵𝙸𝙽 𝚄𝙿𝚃𝙸𝙼𝙴: `{uptime}`"
+        f"-{emoji.ROBOT} 𝙲𝙾𝙵𝙵𝙸𝙽 𝚄𝙿𝚃𝙸𝙼𝙴: `{uptime}`"
     )
