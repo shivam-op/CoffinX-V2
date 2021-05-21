@@ -33,15 +33,7 @@ async def _human_time_duration(seconds):
     return ', '.join(parts)
 
 
-@Client.on_message(filters.command("uptime") & filters.group & ~filters.edited)
-async def ping_pong(_, m: Message):
-    """Reply ping with pong and delete both messages"""
-    start = time()
-    m_reply = await m.reply_text("...")
-    delta_ping = time() - start
-    await m_reply.edit_text(
-        f"{emoji.ROBOT} ping: `{delta_ping * 1000:.3f} ms`"
-    )
+
 
 
 @Client.on_message(filters.command("ping") & filters.group & ~filters.edited)
@@ -51,7 +43,7 @@ async def get_uptime(_, m: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await m.reply_text(
-        f"PONG\n"
-        f"- Coffin uptime: `{uptime}`\n"
-        f"- start time: `{START_TIME_ISO}`"
+        f"ＰＯＮＧ\n"
+        f"- 𝙿𝙸𝙽𝙶: `{delta_ping * 1000:3f} ms`\n"
+        f"-{emoji.robot} 𝙲𝙾𝙵𝙵𝙸𝙽 𝚄𝙿𝚃𝙸𝙼𝙴: `{uptime}`"
     )
