@@ -57,9 +57,9 @@ async def ytsearch(_, message: Message):
         await message.reply_text(str(e))
 
         
- __mod_name__ = "Yt Search"  
+ __MODULE__ = "Yt Search"  
 
-__help__ = """
+__HELP__ = """
 <b>𝙲𝙾𝙰𝙼𝙼𝙰𝙽𝙳𝚂<b>
 - /ytsearch <name>
 """
