@@ -103,7 +103,7 @@ async def ghelp(_, message: Message):
         ),
     )
 
-@app.on_callback_query(filters.regex("bot_commands"))
+@Client.on_callback_query(filters.regex("bot_commands"))
 async def commands_callbacc(_, CallbackQuery):
     text, keyboard = await help_parser(CallbackQuery.from_user.mention)
     await app.send_message(
