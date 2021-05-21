@@ -70,3 +70,12 @@ async def rem(USER, message):
             "\n\nOr manually kick me from to your Group</b>",
         )
         return
+
+    
+__mod_name__ = "Userbotjoin"
+
+__help__ = """
+<b>𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂<b>
+<b>invite assistant to your chat<b>
+/userbotjoin 
+"""
