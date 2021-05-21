@@ -32,7 +32,7 @@ async def start(_, message: Message):
             [ 
                 [
                     InlineKeyboardButton(
-                        "📜 Command 📜", url="https://telegra.ph/%F0%9D%95%90%F0%9D%96%94%F0%9D%96%9A%F0%9D%96%97---%F0%9D%95%AF%F0%9D%96%86%F0%9D%96%89%F0%9D%96%89%F0%9D%95%AA-%EA%97%84-04-26")
+                        "📜 Command 📜", callback_data="get_help")
                   ],[
                     InlineKeyboardButton(
                         "🚑 Support Group 🚑", url="https://t.me/aboutoxy"
@@ -59,3 +59,58 @@ async def gstart(_, message: Message):
         )
    )
 
+@register(regexp="get_help", f="cb")
+@get_strings_dec("pm_menu")
+async def help_cb(event, strings):
+    button = help_markup(MOD_HELP)
+    button.add(InlineKeyboardButton(strings["back"], callback_data="go_to_start"))
+    with suppress(MessageNotModified):
+        await event.message.edit_text(strings["help_header"], reply_markup=button)
+
+
+@register(regexp="lang_btn", f="cb")
+async def set_lang_cb(event):
+    await select_lang_keyboard(event.message, edit=True)
+
+
+@register(regexp="go_to_start", f="cb")
+async def back_btn(event):
+    await get_start_func(event, edit=True)
+
+
+@register(cmds="help", only_pm=True)
+@disableable_dec("help")
+@get_strings_dec("pm_menu")
+async def help_cmd(message, strings):
+    button = help_markup(MOD_HELP)
+    button.add(InlineKeyboardButton(strings["back"], callback_data="go_to_start"))
+    await message.reply(strings["help_header"], reply_markup=button)
+
+
+@register(cmds="help", only_groups=True)
+@disableable_dec("help")
+@get_strings_dec("pm_menu")
+async def help_cmd_g(message, strings):
+    text = strings["btn_group_help"]
+    button = InlineKeyboardMarkup().add(
+        InlineKeyboardButton(text=text, url="https://t.me/CoffinXmusic_bot?start")
+    )
+    await message.reply(strings["help_header"], reply_markup=button)
+
+
+@register(helpmenu_cb.filter(), f="cb", allow_kwargs=True)
+async def helpmenu_callback(query, callback_data=None, **kwargs):
+    mod = callback_data["mod"]
+    if not mod in MOD_HELP:
+        await query.answer()
+        return
+    msg = f"Help for <b>{mod}</b> module:\n"
+    msg += f"{MOD_HELP[mod]}"
+    button = InlineKeyboardMarkup().add(
+        InlineKeyboardButton(text="🏃‍♂️ Back", callback_data="get_help")
+    )
+    with suppress(MessageNotModified):
+        await query.message.edit_text(
+            msg, disable_web_page_preview=True, reply_markup=button
+        )
+        await query.answer("Help for " + mod)
