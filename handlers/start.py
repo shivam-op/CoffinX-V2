@@ -15,7 +15,7 @@ async def start(_, message: Message):
             [ 
                 [
                     InlineKeyboardButton(
-                        "help 🆘", callback_data="get_help")
+                        "help 🆘", callback_data="help_back")
                   ],[
                     InlineKeyboardButton(
                         "🚑 Support Group 🚑", url="https://t.me/aboutoxy"
@@ -42,15 +42,18 @@ async def gstart(_, message: Message):
         )
    )
 
-@Client.on_callback_data(filters.private & filters.incoming & filters.command(['get_help']))
-async def help_cb(event, strings):
-    button = help_markup(MOD_HELP)
-    button.add(InlineKeyboardButton(strings["back"], callback_data="go_to_start"))
-    with suppress(MessageNotModified):
-        await event.message.edit_text(strings["help_header"], reply_markup=button)
+@@Client.on_message(filters.private & filters.incoming & filters.command(['help']))
+def _help(client, message):
+    client.send_message(chat_id = message.chat.id,
+        text = tr.HELP_MSG[1],
+        parse_mode="markdown",
+        disable_web_page_preview=True,
+        disable_notification=True,
+        reply_markup = InlineKeyboardMarkup(map(1)),
+        reply_to_message_id = message.message_id
+    )
 
-
-help_callback_filter = filters.create(lambda _, __, query: query.data.startswith('get_help'))
+help_callback_filter = filters.create(lambda _, __, query: query.data.startswith('help+'))
 
 @Client.on_callback_query(help_callback_filter)
 def help_answer(client, callback_query):
