@@ -832,3 +832,14 @@ async def jiosaavn(client: Client, message_: Message):
     os.remove("final.png")
 
 # Have u read all. If read RESPECT :-)
+__mod_name__ = "play 🎵"
+
+__help__ = """
+<b>𝙰𝚅𝙰𝙸𝙻𝙰𝙱𝙻𝙴 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂:</b>
+<b>Play:<b>
+- /play: Play song using youtube music
+- /play [yt url] : Play the given yt url
+- /play [reply yo audio]: Play replied audio
+- /dplay: Play song via deezer
+- /splay: Play song via jio saavn 
+"""
