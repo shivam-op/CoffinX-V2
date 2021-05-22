@@ -62,6 +62,6 @@ __HELP__ =
 <b>𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂<b>
 <b>Ping and Uptime<b>
 - /ping 
-"""
+
 - /uptime 
 """
