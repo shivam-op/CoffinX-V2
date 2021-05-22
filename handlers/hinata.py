@@ -41,8 +41,4 @@ async def gstart(_, message: Message):
         )
    )
 
-@client.on_callback_query(filters.command("stats_callback"))
-async def stats_callbacc(_, CallbackQuery):
-    text = await bot_sys_stats()
-    await app.answer_callback_query(CallbackQuery.id, text, show_alert=True)
-        
+@
