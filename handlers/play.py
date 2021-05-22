@@ -69,7 +69,7 @@ def cb_admin_check(func: Callable) -> Callable:
         if cb.from_user.id in admemes:
             return await func(client, cb)
         else:
-            await cb.answer('U bitch ain\'t allowed!😏', show_alert=True)
+            await cb.answer('Not for Bitch 😏!! \n Powered By Team Coffin', show_alert=True)
             return
     return decorator                                                                       
                                           
@@ -112,8 +112,8 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
                 await f.write(await resp.read())
                 await f.close()
 
-    image1 = Image.open("./background.png")
-    image2 = Image.open("etc/foreground.png")
+    image1 = Image.open("./background.jpg")
+    image2 = Image.open("etc/foreground.jpg")
     image3 = changeImageSize(1280, 720, image1)
     image4 = changeImageSize(1280, 720, image2)
     image5 = image3.convert("RGBA")
@@ -122,11 +122,8 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("etc/font.otf", 32)
-    draw.text((205, 550), f"Title: {title}", (51, 215, 255), font=font)
-    draw.text(
-        (205, 590), f"Duration: {duration}", (255, 255, 255), font=font
-    )
-    draw.text((205, 630), f"Views: {views}", (255, 255, 255), font=font)
+    draw.texr(200, 550), f"Now Playing In: {chat.title}", (255,255,255), font=font)
+    draw.text((190, 550), f"Title: {title}", (255, 255, 255), font=font)
     draw.text((205, 670),
         f"Added By: {requested_by}",
         (255, 255, 255),
@@ -467,7 +464,7 @@ async def play(_, message: Message):
         return     
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
-    await lel.edit("🔎 **Finding**")
+    await lel.edit("🔎 **Searching**")
     sender_id = message.from_user.id
     user_id = message.from_user.id
     sender_name = message.from_user.first_name
@@ -552,11 +549,12 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="**Currently Playing**\n\n**Song : [{song_name}]({url})**\n⏱️Duration :{song_duration}\nStatus :Playing🎵\nRequested By {request_by}**".format(
+        caption="**Currently Playing**\n\n**🏷️Song : [{song_name}]({url})**\n⏱️Duration :{song_duration}\n💡Status :`Playing🎵`\nRequested By {request_by}\nPlaying In: {chat_title}**".format(
                 song_name=title,
                 url=url,   
                 song_duration=duration,
-                request_by=message.from_user.mention,   
+                request_by=message.from_user.mention, 
+                chat_title=chat.title,   
         ),
     )
         os.remove("final.png")
