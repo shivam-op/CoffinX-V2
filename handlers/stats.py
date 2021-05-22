@@ -6,7 +6,7 @@ import time
 import psutil
 from pyrogram import filters
 
-from handlers import (bot_start_time)
+from handlers import bot_start_time
 
 async def bot_sys_stats():
     bot_uptime = int(time.time() - bot_start_time)
