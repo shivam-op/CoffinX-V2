@@ -2,9 +2,9 @@ import io
 import sys
 import traceback 
 from pyrogram import Client, filters
-from config import SUDO_USER
+from config import SUDO_USERS
 
-@Client.on_message(filters.user(SUDO_USER) & filters.command("eval") & filters.group & ~filters.edited)
+@Client.on_message(filters.user(SUDO_USERS) & filters.command("eval") & filters.group & ~filters.edited)
 async def eval(client, message):
     status_message = await message.reply_text("Processing ...")
     cmd = message.text.split(" ", maxsplit=1)[1]
