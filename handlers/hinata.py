@@ -14,7 +14,7 @@ async def start(_, message: Message):
             [ 
                 [
                     InlineKeyboardButton(
-                        "help 🆘", callback_data="bot_commands")
+                        "Stats 👨‍💻", callback_data="stats_callback")
                   ],[
                     InlineKeyboardButton(
                         "🚑 Support Group 🚑", url="https://t.me/aboutoxy"
@@ -40,3 +40,9 @@ async def gstart(_, message: Message):
             ]
         )
    )
+
+@client.on_callback_query(filters.command("stats_callback"))
+async def stats_callbacc(_, CallbackQuery):
+    text = await bot_sys_stats()
+    await app.answer_callback_query(CallbackQuery.id, text, show_alert=True)
+        
