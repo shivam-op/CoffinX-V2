@@ -56,12 +56,6 @@ async def ping_pong(_, m: Message):
         f"- 𝚂𝚃𝙰𝚁𝚃 𝚃𝙸𝙼𝙴: `{START_TIME_ISO}`"
     )
 
-"""
-__MODULE__ = "Ping/uptime"
-__HELP__ = 
-<b>𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂<b>
-<b>Ping and Uptime<b>
-- /ping 
 
-- /uptime 
-"""
+
+
