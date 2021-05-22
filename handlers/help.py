@@ -1,3 +1,6 @@
+from pyrogram import Client, filters
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+
 @Client.on_message(filters.command("help") & filters.group & ~filters.private & ~filters.channel)
 async def ghelp(_, message: Message):
     await message.reply_text(
