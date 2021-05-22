@@ -1,5 +1,5 @@
 
-@Client.on_message(filters.command("stats") & ~filters.private & ~filters.channel)
+@Client.on_message(filters.command("stats") & filters.group & ~filters.private & ~filters.channel)
 async def gstats(_, message: Message):
     await message.reply_text(
       f"""𝙃𝙄𝙉𝘼𝙏𝘼 𝘽𝙊𝙏
