@@ -1,3 +1,5 @@
+from pyrogram import Client, filters
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 @Client.on_message(filters.command("stats") & filters.group & ~filters.private & ~filters.channel)
 async def gstats(_, message: Message):
