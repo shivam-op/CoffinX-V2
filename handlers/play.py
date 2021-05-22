@@ -122,7 +122,6 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("etc/font.otf", 32)
-    draw.text((200, 550), f"Now Playing In: {}", (255,255,255), font=font).format(message.chat.title)
     draw.text((190, 550), f"Title: {title}", (255, 255, 255), font=font)
     draw.text((205, 670),
         f"Added By: {requested_by}",
