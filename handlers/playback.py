@@ -2,8 +2,8 @@
 __mod_name__ = "Playback ⏯"
 
 __help__ = """
-<b>𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂<b>
-<b>playback<b>
+𝙲𝙾𝙼𝙼𝙰𝙽𝙳
+𝙋𝙇𝘼𝙔𝘽𝘼𝘾𝙆
 - /player: Open Settings menu of player
 - /skip: Skips the current track
 - /pause: Pause track
