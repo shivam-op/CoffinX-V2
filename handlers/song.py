@@ -402,7 +402,7 @@ async def ytmusic(client,message: Message):
             os.remove(files)
 
     """   
-    __MODULE__ = "Download song"
+    __mod_name__ = "Download song"
     
     __HELP__ = 
     <b>𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂<b>
