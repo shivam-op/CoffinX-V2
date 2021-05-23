@@ -832,3 +832,10 @@ async def jiosaavn(client: Client, message_: Message):
     os.remove("final.png")
 
 # Have u read all. If read RESPECT :-)
+
+__mod_name__ = "play"
+
+__help__ = """
+𝙿𝙻𝙰𝚈 
+""" 
+__command_list__ = ["Play"], ["skip"], ["end"], ["pause"], ["resume"]
