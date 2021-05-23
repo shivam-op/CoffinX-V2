@@ -54,7 +54,7 @@ import ffmpeg
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
-from CoffinX.config import que
+from config import que
 from Python_ARQ import ARQ
 import json
 import wget
