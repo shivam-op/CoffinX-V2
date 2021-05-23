@@ -57,6 +57,11 @@ async def ping_pong(_, m: Message):
         f"- 𝚂𝚃𝙰𝚁𝚃 𝚃𝙸𝙼𝙴: `{START_TIME_ISO}`"
     )
 
+__mod_name__ = "ping/uptime"
 
+__help__ = """
+𝙿𝙸𝙽𝙶 𝙰𝙽𝙳 𝚄𝙿𝚃𝙸𝙼𝙴 
+"""
+__command_list__ = ["ping"], ["uptime"]
 
 
