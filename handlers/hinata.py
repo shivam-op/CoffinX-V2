@@ -18,24 +18,24 @@ maintain by @CoffinXSupport..✨
 \nuse this inline buttons to know more 😉😉.
 </b>""",
       
-        reply_markup=InlineKeyboardMarkup(
-          [[
+                reply_markup=InlineKeyboardMarkup
+                    [[
                         InlineKeyboardButton(
-                            text="Add Coffin To Your Group 👨‍💻",
-                            url="t.me/CoffinXmusic_bot?startgroup=true"
+                            text="🚑 Support Group 🚑",
+                            url="t.me/CoffinXsupport"
                     ],
                      [
                          InlineKeyboardButton(
-                             text="🚑 Support Group 🚑",
-                             url=f"https://t.me/CoffinXsupport"),
+                             text="ℹ️ Updates Channel",
+                             url=f"https://t.me/CoffinX_updatess"),
                          InlineKeyboardButton(
-                             text="ℹ️ updates Channel",
-                             url="https://t.me/Layl")
+                             text="👨‍💻 Creator 👨‍💻",
+                             url="https://t.me/theshashankk")
                      ],
                      [
                          InlineKeyboardButton(
-                             text="👨‍💻 Bot Creator 👨‍💻",
-                             url="https://github.com/Theshashankk")
+                             text="Take Me To your Group",
+                             url="https://t.me/Coffinxmusic_bot?startgroup=true")
                      ]]))
    
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
