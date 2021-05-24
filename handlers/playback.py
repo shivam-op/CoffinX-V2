@@ -1,7 +1,7 @@
-
+"""
 __mod_name__ = "Playback ⏯"
 
-__help__ = """
+__help__ = 
 𝙲𝙾𝙼𝙼𝙰𝙽𝙳
 𝙋𝙇𝘼𝙔𝘽𝘼𝘾𝙆
 - /player: Open Settings menu of player
@@ -10,7 +10,8 @@ __help__ = """
 - /resume: Resumes the paused track
 - /end: Stops media playback
 - /current: Shows the current Playing track
-- /playlist: Shows playlist."""
+- /playlist: Shows playlist.
 
 __command_list__ = ["player"], ["skip"], ["pause"], ["resume"], ["end"], ["current"], ["playlist"]
 __handlers__ = [player, skip, pause, resume, end, current, playlist]
+"""
