@@ -61,7 +61,7 @@ async def ghelp(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🆘 help 🆘", url="https://t.me/CoffinX_music?start=help")
+                        "🆘 help 🆘", url="https://t.me/CoffinXmusic_bot?start=help")
                 ]
             ]
         )
