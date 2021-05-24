@@ -62,12 +62,13 @@ async def aexec(code, client, message):
     )
     return await locals()["__aexec"](client, message)                   
                    
-
+"""
 __mod_name__ ="eval"
 
-__help__= """
+__help__= 
 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂
 𝙀𝙑𝘼𝙇
-"""
+
 __command_list__ = ["eval"]
 __handlers__ = [eval]
+"""
