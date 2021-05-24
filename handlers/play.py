@@ -199,11 +199,11 @@ def r_ply(type_):
                 
             ],
             [
-                InlineKeyboardButton('ρℓαуℓιѕт 📖', 'playlist'),
+                InlineKeyboardButton('Playlist 📖', 'playlist'),
                 
             ],
             [       
-                InlineKeyboardButton("❌ ¢ℓσѕє",'cls')
+                InlineKeyboardButton("❌ Close",'cls')
             ]        
         ]
     )
@@ -372,11 +372,11 @@ async def m_cb(b, cb):
                 
                 ],
                 [
-                    InlineKeyboardButton('ρℓαуℓιѕт 📖', 'playlist'),
+                    InlineKeyboardButton('Playlist 📖', 'playlist'),
                 
                 ],
                 [       
-                    InlineKeyboardButton("❌ ¢ℓσѕє",'cls')
+                    InlineKeyboardButton("❌ Close",'cls')
                 ]        
             ]
         )
@@ -502,19 +502,19 @@ async def play(_, message: Message):
             [   
                 [
                                
-                    InlineKeyboardButton('📖 ρℓαуℓιѕт', callback_data='playlist'),
-                    InlineKeyboardButton('мєиυ ⏯ ', callback_data='menu')
+                    InlineKeyboardButton('📖 Playlist', callback_data='playlist'),
+                    InlineKeyboardButton('menu ⏯ ', callback_data='menu')
                 
                 ],                     
                 [
                     InlineKeyboardButton(
-                        text="ωαт¢н σи уσυтυвє 🎬",
+                        text="YouTube link 🎬",
                         url=f"{url}")
 
                 ],
                 [       
                     InlineKeyboardButton(
-                        text="❌ ¢ℓσѕє",
+                        text="❌ close",
                         callback_data='cls')
 
                 ]                             
@@ -640,18 +640,18 @@ async def deezer(client: Client, message_: Message):
     keyboard = InlineKeyboardMarkup(
          [   
              [
-                 InlineKeyboardButton('📖 ρℓαуℓιѕт', callback_data='playlist'),
-                 InlineKeyboardButton('мєиυ ⏯ ', callback_data='menu')     
+                 InlineKeyboardButton('📖 Playlist', callback_data='playlist'),
+                 InlineKeyboardButton('Menu ⏯ ', callback_data='menu')     
              ],                     
              [
                  InlineKeyboardButton(
-                     text="ℓιѕтєи σи ∂єєzєя 🎬",
+                     text="Deezer link 🎬",
                      url=f"{url}")
 
              ],
              [       
                  InlineKeyboardButton(
-                     text="❌ ¢ℓσѕє",
+                     text="❌ Close",
                      callback_data='cls')
 
             ]                      
@@ -774,17 +774,17 @@ async def jiosaavn(client: Client, message_: Message):
     keyboard = InlineKeyboardMarkup(
          [   
              [
-               InlineKeyboardButton('📖 ρℓαуℓιѕт', callback_data='playlist'),
-               InlineKeyboardButton('мєиυ ⏯ ', callback_data='menu')   
+               InlineKeyboardButton('📖 Playlist', callback_data='playlist'),
+               InlineKeyboardButton('Menu ⏯ ', callback_data='menu')   
              ],                     
              [
                InlineKeyboardButton(
-                   text="σffι¢ιαℓ gяσυρ",
-                   url='https://t.me/X_F0RCE_TEAM')
+                   text="🚑 Supporr Group 🚑",
+                   url='https://t.me/CoffinXsupport')
              ],
              [       
                InlineKeyboardButton(
-                   text="❌ ¢ℓσѕє",
+                   text="❌ Close",
                    callback_data='cls')
 
             ]                          
@@ -832,10 +832,11 @@ async def jiosaavn(client: Client, message_: Message):
     os.remove("final.png")
 
 # Have u read all. If read RESPECT :-)
-
+"""
 __mod_name__ = "play"
 
-__help__ = """
+__help__ = 
 𝙿𝙻𝙰𝚈 
-""" 
+
 __command_list__ = ["Play"], ["skip"], ["end"], ["pause"], ["resume"]
+"""
