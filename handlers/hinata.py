@@ -17,26 +17,30 @@ async def start_(client: Client, message: Message):
 maintain by @CoffinXSupport..✨
 \nuse this inline buttons to know more 😉😉.
 </b>""",
-      
-                reply_markup=InlineKeyboardMarkup
-                    [[
-                        InlineKeyboardButton(
-                            text="🚑 Support Group 🚑",
-                            url="t.me/CoffinXsupport"
-                    ],
-                     [
-                         InlineKeyboardButton(
-                             text="ℹ️ Updates Channel",
-                             url=f"https://t.me/CoffinX_updatess"),
-                         InlineKeyboardButton(
-                             text="👨‍💻 Creator 👨‍💻",
-                             url="https://t.me/theshashankk")
-                     ],
-                     [
-                         InlineKeyboardButton(
-                             text="Take Me To your Group",
-                             url="https://t.me/Coffinxmusic_bot?startgroup=true")
-                     ]]))
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "🚑 Support group 🚑", url="t.me/CoffinXsupport")
+                  ],[
+                    InlineKeyboardButton(
+                        "ℹ️ updates channel", url="https://t.me/CoffinX_updates"
+                    ),
+                    InlineKeyboardButton(
+                        "👨‍💻 Creator 👨‍💻", url="https://t.me/xD_shashank"
+                    )
+                ],[ 
+                    InlineKeyboardButton(
+                        "💁 Assistant 💁", url="https://t.me/CoffinXPlayer"
+                    )],
+                    [ 
+                    InlineKeyboardButton(
+                        "➕ Add To Your Group ➕", url="https://t.me/CoffinXmusic_bot?startgroup=true"
+                    )]
+            ]
+        ),
+     disable_web_page_preview=True
+    )
    
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
