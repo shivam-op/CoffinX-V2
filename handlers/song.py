@@ -401,10 +401,10 @@ async def ytmusic(client,message: Message):
         if files and os.path.exists(files):
             os.remove(files)
 
-    
+    """
     __mod_name__ = "Download song"
     
-    __help__ = """
+    __help__ = 
     𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂
     To download Song From Youtube
     - /song name 
