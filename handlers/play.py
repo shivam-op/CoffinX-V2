@@ -550,13 +550,12 @@ async def play(_, message: Message):
         callsmusic.pytgcalls.join_group_call(message.chat.id, file_path)
         await message.reply_photo(
         photo="final.png",
-        reply_markup=keyboard,
-        caption=f"**𝘾𝙐𝙍𝙍𝙀𝙉𝙏𝙇𝙔 𝙋𝙇𝘼𝙔𝙄𝙉𝙂**\n\n**🏷️Song: [{title}]({url})**\n⏱️Duration: {duration}\n💡Status: `Playing🎵`\nRequested By {request_by}\nPlaying In: {current_chat}**".format(
-                title=title,
+        caption="**𝘾𝙐𝙍𝙍𝙀𝙉𝙏𝙇𝙔 𝙋𝙇𝘼𝙔𝙄𝙉𝙂**\n\n**🏷️Song: [{song_name}]({url})**\n⏱️Duration: {song_duration}\n💡Status: `Playing🎵`\nRequested By {request_by}\nPlaying In: {chat_title}**".format(
+                song_name=title,
                 url=url,   
-                duration=duration,
-                request_by=message.from_user.mention, 
-                current_chat=message.chat.title,   
+                song_duration=duration,
+                request_by=message.from_user.mention,
+                chat_title=message.chat.title,   
         ),
     )
         os.remove("final.png")
