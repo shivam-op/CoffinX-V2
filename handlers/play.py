@@ -551,12 +551,12 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption=f"**𝘾𝙐𝙍𝙍𝙀𝙉𝙏𝙇𝙔 𝙋𝙇𝘼𝙔𝙄𝙉𝙂**\n\n**🏷️Song: [{title}]({url})**\n⏱️Duration: {duration}\n💡Status: `Playing🎵`\nRequested By {message.from_user.mention}\nPlaying In: {message.chat.title}**".format(
+        caption=f"**𝘾𝙐𝙍𝙍𝙀𝙉𝙏𝙇𝙔 𝙋𝙇𝘼𝙔𝙄𝙉𝙂**\n\n**🏷️Song: [{title}]({url})**\n⏱️Duration: {duration}\n💡Status: `Playing🎵`\nRequested By {request}\nPlaying In: {chat}**".format(
                 title=title,
                 url=url,   
                 duration=duration,
-                message.from_user.mention=message.from_user.mention, 
-                message.chat.title=message.chat.title,   
+                request=message.from_user.mention, 
+                chat=message.chat.title,   
         ),
     )
         os.remove("final.png")
