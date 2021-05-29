@@ -534,7 +534,7 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
         photo="final.png", 
-        caption=f"#⃣ Your requested song **queued** at position {position}!",
+        caption=f"**🏷️Song: [{title}]({url})**\n⏱️Duration: {duration}\n💡Status: `queued`\n\n **At Position** #{position}!",
         reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
@@ -641,7 +641,7 @@ async def deezer(client: Client, message_: Message):
          [   
              [
                  InlineKeyboardButton('📖 Playlist', callback_data='playlist'),
-                 InlineKeyboardButton('Menu ⏯ ', callback_data='menu')     
+                 InlineKeyboardButton('🎚️ Menu ', callback_data='menu')     
              ],                     
              [
                  InlineKeyboardButton(
@@ -669,9 +669,9 @@ async def deezer(client: Client, message_: Message):
         loc = file_path
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
-        await res.edit_text(f"#️⃣ Queued at position {position}")
+        await res.edit_text(f"**🏷️Song: [{title}]({url})**\n⏱️Duration: {duration}\n💡Status: `queued`\nRequested By {message.from_user.mention}\n\n **At position #{position}**")
     else:
-        await res.edit_text("▶️ Playing.....")
+        await res.edit_text(f"**🏷️Song: [{title}]({url})**\n⏱️Duration: {duration}\n💡Status: `Playing🎵`\nRequested By {message.from_user.mention}\n\n**Playing in: {message.chat.title}**")
         chat_id = message_.chat.id
         que[chat_id] = []
         qeue = que.get(message_.chat.id)
@@ -688,7 +688,7 @@ async def deezer(client: Client, message_: Message):
         chat_id=message_.chat.id,
         reply_markup=keyboard,
         photo="final.png",
-        caption=f"Playing [{title}]({url}) Via Deezer"
+        caption=f"**🏷️Song: [{title}]({url})**\n⏱️Duration: {duration}\n💡Status: `Playing🎵`\nRequested By {message.from_user.mention}"
     ) 
     os.remove("final.png")
 
@@ -700,7 +700,7 @@ async def deezer(client: Client, message_: Message):
 )
 async def jiosaavn(client: Client, message_: Message):
     global que
-    lel = await message_.reply("🔄 **Processing**")
+    lel = await message_.reply(" **Processing**")
     administrators = await get_administrators(message_.chat)
     chid = message_.chat.id
     try:
@@ -804,12 +804,12 @@ async def jiosaavn(client: Client, message_: Message):
             chat_id=message_.chat.id,
             reply_markup=keyboard,
             photo="final.png",
-            caption=f"#️⃣ Queued at position {position}",
+            caption=f"**🏷️Song: [{title}]({url})**\n⏱️Duration: {duration}\n💡Status: `queued`\nRequested By {message.from_user.mention}\n\n**At Position #{position}",
         
         )           
            
     else:
-        await res.edit_text("▶️ Playing.....")
+        await res.edit_text(f"**🏷️Song: [{title}]({url})**\n⏱️Duration: {duration}\n💡Status: `Playing🎵`\nRequested By {message.from_user.mention}")
         chat_id = message_.chat.id
         que[chat_id] = []
         qeue = que.get(message_.chat.id)
