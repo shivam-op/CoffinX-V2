@@ -1,7 +1,7 @@
 from asyncio import sleep
 from pyrogram import filters
 from pyrogram.handlers import MessageHandler
-from config import SUDO_FILTER, BANNED
+from config import SUDO_USERS, BANNED
 from strings import get_string as _
 
 
