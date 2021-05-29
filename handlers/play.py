@@ -392,7 +392,7 @@ async def m_cb(b, cb):
             if callsmusic.queues.is_empty(chat_id):
                 callsmusic.pytgcalls.leave_group_call(chat_id)
                 
-                await cb.message.edit('- No More Playlist..\n- Leaving VC!')
+                await cb.message.edit('- **No More song in my playlist**..\n- Leaving VC!')
             else:
                 callsmusic.pytgcalls.change_stream(
                     chat_id,
@@ -400,7 +400,7 @@ async def m_cb(b, cb):
                 )
                 await cb.answer('Skipped')
                 await cb.message.edit((m_chat, qeue), reply_markup=r_ply(the_data))
-                await cb.message.reply_text(f'- Skipped track\n- Now Playing **{qeue[0][0]}**')
+                await cb.message.reply_text(f'- **Skipped track**\n- **Now Playing** **{qeue[0][0]}**\n **Requested By {message.from_user.mention}**')
 
     else:      
         if chat_id in callsmusic.pytgcalls.active_calls:
@@ -412,7 +412,7 @@ async def m_cb(b, cb):
             callsmusic.pytgcalls.leave_group_call(chat_id)
             await cb.message.edit('Successfully Left the Chat!')
         else:
-            await cb.answer('Chat is not connected!', show_alert=True)
+            await cb.answer('I dont think 🤔 chat is connected!', show_alert=True)
 
 @Client.on_message(command("play") & other_filters)
 async def play(_, message: Message):
@@ -503,7 +503,7 @@ async def play(_, message: Message):
                 [
                                
                     InlineKeyboardButton('📖 Playlist', callback_data='playlist'),
-                    InlineKeyboardButton('menu ⏯ ', callback_data='menu')
+                    InlineKeyboardButton(' 🎚️ Menu', callback_data='menu')
                 
                 ],                     
                 [
