@@ -661,7 +661,7 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption=f"#⃣ Your requested song **queued** at position {position}!",
+            caption=f"🏷️Song: [{title}]({url})**\n⏱️Duration: {duration}\n💡Status: `queued`\n\n **At Position** #{position}!",
             reply_markup=keyboard,
         )
         os.remove("final.png")
