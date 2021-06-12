@@ -683,8 +683,12 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="▶️ **Playing** here the song requested by {} via Youtube Music 😜".format(
-                message.from_user.mention()
+            caption="**𝘾𝙐𝙍𝙍𝙀𝙉𝙏𝙇𝙔 𝙋𝙇𝘼𝙔𝙄𝙉𝙂**\n\n**🏷️Song: [{song_name}]({url})**\n⏱️Duration: {song_duration}\n💡Status: `Playing🎵`\nRequested By {request_by}\nPlaying In: {chat_title}**".format(
+                song_name=title,
+                url=url,   
+                song_duration=duration,
+                request_by=message.from_user.mention,
+                chat_title=message.chat.title,   
             ),
         )
         os.remove("final.png")
