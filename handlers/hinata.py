@@ -20,21 +20,21 @@ maintain by @CoffinXSupport..✨
             [
                 [
                     InlineKeyboardButton(
-                        "🚑 Support group 🚑", url="t.me/CoffinXsupport")
+                        "🚑 Support group 🚑", url="t.me/OP_FUN_GROUP")
                   ],[
                     InlineKeyboardButton(
-                        "ℹ️ updates channel", url="https://t.me/CoffinX_updates"
+                        "ℹ️ updates channel", url="https://t.me/SHIVAM_INFO"
                     ),
                     InlineKeyboardButton(
-                        "👨‍💻 Creator 👨‍💻", url="https://t.me/xD_shashank"
+                        "👨‍💻 Creator 👨‍💻", url="https://t.me/SHIVAM_INFO"
                     )
                 ],[ 
                     InlineKeyboardButton(
-                        "💁 Assistant 💁", url="https://t.me/CoffinXPlayer"
+                        "💁 Assistant 💁", url="https://t.me/SHIVAM_X_PLAYER"
                     )],
                     [ 
                     InlineKeyboardButton(
-                        "➕ Add To Your Group ➕", url="https://t.me/CoffinXmusic_bot?startgroup=true"
+                        "➕ Add To Your Group ➕", url="https://t.me/SHIVAMVCBOT?startgroup=true"
                     )]
             ]
         ),
@@ -48,7 +48,7 @@ async def gstart(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🚑 SUPPORT GROUP 🚑", url="https://t.me/CoffinXsupport")
+                        "🚑 SUPPORT GROUP 🚑", url="https://t.me/SHIVAM_INFO")
                 ]
             ]
         )
@@ -61,7 +61,7 @@ async def ghelp(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🆘 help 🆘", url="https://t.me/CoffinXmusic_bot?start=help")
+                        "🆘 help 🆘", url="https://t.me/SHIVAMVCBot?start=help")
                 ]
             ]
         )
@@ -98,10 +98,10 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🔊 Channel", url="https://t.me/CoffinX_updates"
+                        "🔊 Channel", url="https://t.me/SHIVAM_INFO"
                     ),
                     InlineKeyboardButton(
-                        "💬 Group", url="https://t.me/CoffinXsupport"
+                        "💬 Group", url="https://t.me/OP_FUN_GROUP"
                     )
                 ]
             ]
